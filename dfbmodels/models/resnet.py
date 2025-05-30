@@ -2,7 +2,7 @@ import torch
 
 from dfbmodels.state import StateExpDecay
 
-from dfbmodels.layers.equilibrium import EquilibriumModel
+from dfbmodels.equilibrium import EquilibriumModel
 
 from torchvision.models.resnet import BasicBlock, Bottleneck
 
