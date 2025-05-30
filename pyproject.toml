@@ -1,0 +1,15 @@
+[project]
+name = "deep-feedback-models"
+dynamic = ["version"]
+description = "A set of python modules that implement feedback in well known neural architectures"
+readme = "README.md"
+maintainers = [
+    {name = "DCalhas", email="david.calhas@tecnico.ulisboa.pt"},
+]
+dependencies = [
+  "numpy>=1.22.0",
+  "torch>=2.7.0",
+  "torchvision>=0.22.0",
+  "segmentation_models_pytorch>=0.4.1",
+]
+requires-python = ">=3.10"
