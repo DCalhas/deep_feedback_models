@@ -10,7 +10,7 @@ import segmentation_models_pytorch as smp
 
 from dfbmodels.equilibrium import EquilibriumModel
 
-from dfbmodels.state import StateConvExpDecay
+from dfbmodels.state import StateExpDecay#StateConvExpDecay
 
 class DeepLabV3Plus(smp.DeepLabV3, EquilibriumModel):
 
