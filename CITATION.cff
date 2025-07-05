@@ -1,0 +1,14 @@
+cff-version: 1.2.0
+message: "If you use this software, please cite it as below."
+authors:
+- family-names: "Calhas"
+  given-names: "David"
+  orcid: "https://orcid.org/0000-0001-6618-9086"
+- family-names: "L Oliveira"
+  given-names: "Arlindo"
+  orcid: "https://orcid.org/0000-0001-8638-5594"
+title: "Deep Feedback Models"
+journal: "ArXiv"
+version: 1.0.0
+date-released: 2025-07-05
+url: "https://github.com/DCalhas/deep_feedback_models"
