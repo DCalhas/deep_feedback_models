@@ -1,5 +1,6 @@
-# Deep Feedback Models
-
+<p align="center">
+  <img src=".assets/dfm_logo.svg" alt="DFM logo" width="100%"/>
+</p>
 
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](LICENSE)
 [![blog](https://img.shields.io/badge/docs-homepage-blue.svg)](https://mira.inesc-id.pt/dfms)
