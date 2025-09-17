@@ -201,17 +201,23 @@ class StateConvExpDecay(torch.nn.Module):
 		torch.nn.init.orthogonal_(self.U)
 		torch.nn.init.orthogonal_(self.V)
 
+		self.autograd_fn=layers.state.ExpDecay
+
+		#run deterministically
+		assert os.environ["CUBLAS_WORKSPACE_CONFIG"]==":4096:8" or os.environ["CUBLAS_WORKSPACE_CONFIG"]==":16:8"
+		torch.use_deterministic_algorithms(True, warn_only=True)
+
 	@torch.compile
 	def solve(self, x, S, Q, Qinv, T,):
 		"""
 		This is very similar to the solve of StateExpDecay, however here we compute the kernel first and then use it
 		to dissipate energy in x. Normalization by the size of the kernel is needed in order to avoid gradient explosion
 		"""
-		expS=torch.diag(torch.exp(T*S),)
+		z=torch.nn.functional.linear(x.permute(0,2,3,1), Q).permute(0,3,1,2,)
 
-		At=(Q@expS@Qinv).reshape(self.filters, self.filters, self.kernel_size, self.kernel_size)
-
-		return torch.nn.functional.conv2d(x, At, stride=self.stride, padding="same")/self.kernel_size
+		z2=self.autograd_fn.apply(z, self.T*T, S)
+		
+		return torch.nn.functional.conv2d(z2, Qinv.reshape(self.filters, self.filters, self.kernel_size, self.kernel_size), stride=self.stride, padding="same")/self.kernel_size
 		
 	@torch.compile
 	def forward(self, x, T=5):
