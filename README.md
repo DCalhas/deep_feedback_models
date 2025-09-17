@@ -1,5 +1,10 @@
 # Deep Feedback Models
 
+
+[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](LICENSE)
+[![blog](https://img.shields.io/badge/docs-homepage-blue.svg)](https://mira.inesc-id.pt/dfms)
+[![arXiv](https://img.shields.io/badge/arXiv-2501.01234-b31b1b.svg)](https://arxiv.org/abs/2501.01234)
+
 Deep Feedback Models (DFMs) provide a flexible PyTorch framework for exploring neural architectures with recurrent feedback connections, enabling more biologically inspired and dynamically robust deep learning. This repository includes ready-to-use implementations of popular backbones such as ResNet and DeepLabV3+, extended with feedback mechanisms for classification and segmentation tasks. Our goal is to make DFMs easily accessible for research and application, while encouraging contributions to broaden the library of supported models. Learn more about the project at our [homepage](https://mira.inesc-id.pt/dfms). 
 
 Below we illustrate the unrolled computational graph of a DFM with $4$ iterations. Dashed lines illustrate the backward pass.
