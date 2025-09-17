@@ -5,7 +5,7 @@ Deep Feedback Models (DFMs) provide a flexible PyTorch framework for exploring n
 Below we illustrate the unrolled computational graph of a DFM with $4$ iterations. Dashed lines illustrate the backward pass.
 
 <p align="center">
-  <img src="assets/forward_backward.png" alt="DFMs forward and backward pass" width="60%"/>
+  <img src="assets/forward_backward.png" alt="DFMs forward and backward pass" width="100%"/>
 </p>
 
 ## Setup
