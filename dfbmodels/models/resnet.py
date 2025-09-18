@@ -22,7 +22,7 @@ class ResNet(_ResNet, EquilibriumModel):
 
 	def __init__(self, frontend='resnet', fb_filters=0, registers=0, n_classes=200, shape=(64,64), tau=1e0, block=BasicBlock, layers=[3,4,6,3]):
 		"""
-		This is the init function of the NeumannResnet class, the arguments of the call are:
+		This is the init function of the ResNet class, the arguments of the call are:
 		* frontend - str - specifies the frontend defined in this model, for now we are just implementing the standard of the resnet
 		* fb_filters - int - specifies the number of feedback neurons that are taken from higher level representation and concatenated with the representation that comes out of the frontend
 		* registers - int - specifies the number of neurons that register information, this is always set to zero in our experiments
