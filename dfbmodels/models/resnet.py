@@ -169,7 +169,6 @@ class ResNet(_ResNet, EquilibriumModel):
 
 		torch.nn.init.constant_(self.T, self.T+1)
 	
-	@torch.compile	
 	def prediction(self,):
 		"""
 		This function filters the hidden state right part of the vector to feed to the classification head to get a decision.
