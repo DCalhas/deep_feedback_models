@@ -122,7 +122,7 @@ class ResNet(_ResNet, EquilibriumModel):
 		"""
 		self.state=self.state.to(device=device)
 		
-		super(NeumannResnet,self).to(device=device, **kwargs)
+		super(ResNet,self).to(device=device, **kwargs)
 
 	@property
 	def states(self):
