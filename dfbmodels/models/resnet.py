@@ -20,7 +20,7 @@ class ResNet(_ResNet, EquilibriumModel):
 	>>> model(x).sum().backward()
 	"""
 
-	def __init__(self, frontend='resnet', fb_filters=0, registers=0, n_classes=200, shape=(64,64), tau=1e0, block=BasicBlock, layers=[3,4,6,3]):
+	def __init__(self, frontend='resnet', in_channels=3, fb_filters=0, registers=0, n_classes=200, shape=(64,64), tau=1e0, block=BasicBlock, layers=[3,4,6,3]):
 		"""
 		This is the init function of the ResNet class, the arguments of the call are:
 		* frontend - str - specifies the frontend defined in this model, for now we are just implementing the standard of the resnet
@@ -33,7 +33,7 @@ class ResNet(_ResNet, EquilibriumModel):
 		* layers - list(int) - specifies the number of blocks per layer, this parameter is given to the Resnet constructor
 		
 		"""
-		super(ResNet, self).__init__(block, layers, num_classes=n_classes)
+		super(ResNet, self).__init__(block, layers, in_channels=in_channels, num_classes=n_classes)
 
 		nodes=4
 		self.shape=shape
@@ -201,15 +201,15 @@ class ResNet(_ResNet, EquilibriumModel):
 
 class ResNet18(ResNet):
 
-	def __init__(self, frontend='resnet', fb_filters=0, registers=0, n_classes=200, shape=(64,64), tau=1e0):
-		super(ResNet18, self).__init__(frontend=frontend, fb_filters=fb_filters, registers=registers, n_classes=n_classes, shape=shape, tau=tau, block=BasicBlock, layers=[2,2,2,2])
+	def __init__(self, frontend='resnet', in_channels=3, fb_filters=0, registers=0, n_classes=200, shape=(64,64), tau=1e0):
+		super(ResNet18, self).__init__(frontend=frontend, in_channels=in_channels, fb_filters=fb_filters, registers=registers, n_classes=n_classes, shape=shape, tau=tau, block=BasicBlock, layers=[2,2,2,2])
 
 class ResNet34(ResNet):
 
-	def __init__(self, frontend='resnet', fb_filters=0, registers=0, n_classes=200, shape=(64,64), tau=1e0):
-		super(ResNet34, self).__init__(frontend=frontend, fb_filters=fb_filters, registers=registers, n_classes=n_classes, shape=shape, tau=tau, block=BasicBlock, layers=[3,4,6,3])
+	def __init__(self, frontend='resnet', in_channels=3, fb_filters=0, registers=0, n_classes=200, shape=(64,64), tau=1e0):
+		super(ResNet34, self).__init__(frontend=frontend, in_channels=in_channels, fb_filters=fb_filters, registers=registers, n_classes=n_classes, shape=shape, tau=tau, block=BasicBlock, layers=[3,4,6,3])
 
 class ResNet50(ResNet):
 
-	def __init__(self, frontend='resnet', fb_filters=0, registers=0, n_classes=200, shape=(224,224), tau=1e0):
-		super(ResNet50, self).__init__(frontend=frontend, fb_filters=fb_filters, registers=registers, n_classes=n_classes, shape=shape, tau=tau, block=Bottleneck, layers=[3,4,6,3])
+	def __init__(self, frontend='resnet', in_channels=3, fb_filters=0, registers=0, n_classes=200, shape=(224,224), tau=1e0):
+		super(ResNet50, self).__init__(frontend=frontend, in_channels=in_channels, fb_filters=fb_filters, registers=registers, n_classes=n_classes, shape=shape, tau=tau, block=Bottleneck, layers=[3,4,6,3])
