@@ -13,7 +13,7 @@ dependencies = [
   "opencv-python==4.9.0.80",
   "numpy==1.24.4",
   "Pillow==10.2.0",
-  "segmentation_models_pytorch==0.4.1",
+  "segmentation_models_pytorch==0.4.0",
   "six==1.16.0"
 ]
 keywords = ["deep feedback models", "image segmentation", "deep learning", "learning", "machine learning", "computer vision"]
