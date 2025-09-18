@@ -112,7 +112,6 @@ class StateExpDecay(torch.nn.Module):
 		
 		self.autograd_fn=ExpDecay
 
-	@torch.compile
 	def solve(self, x, S, Q, Qinv, T,):
 		"""
 		This is a torch function that maps x to a spectral space via $x \cdot Q$, then
@@ -125,7 +124,6 @@ class StateExpDecay(torch.nn.Module):
 
 		return torch.nn.functional.linear(z2.permute(0,2,3,1), Qinv).permute(0,3,1,2,)
 
-	@torch.compile
 	def forward(self, x, T=5):
 		"""
 		The forward pass of this module first verifies if it is training and it is the first timestep, we do reorthogonalization
@@ -207,7 +205,6 @@ class StateConvExpDecay(torch.nn.Module):
 		assert os.environ["CUBLAS_WORKSPACE_CONFIG"]==":4096:8" or os.environ["CUBLAS_WORKSPACE_CONFIG"]==":16:8"
 		torch.use_deterministic_algorithms(True, warn_only=True)
 
-	@torch.compile
 	def solve(self, x, S, Q, Qinv, T,):
 		"""
 		This is very similar to the solve of StateExpDecay, however here we compute the kernel first and then use it
@@ -219,7 +216,6 @@ class StateConvExpDecay(torch.nn.Module):
 		
 		return torch.nn.functional.conv2d(z2, Qinv.reshape(self.filters, self.filters, self.kernel_size, self.kernel_size), stride=self.stride, padding="same")/self.kernel_size
 		
-	@torch.compile
 	def forward(self, x, T=5):
 		"""
 		The forward pass first corrects U and V to be orthogonal, if the model is training and it is the first step taken in decay.
