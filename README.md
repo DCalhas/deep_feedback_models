@@ -4,7 +4,7 @@
 
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](LICENSE)
 [![blog](https://img.shields.io/badge/docs-homepage-blue.svg)](https://mira.inesc-id.pt/dfms)
-[![arXiv](https://img.shields.io/badge/arXiv-2501.01234-b31b1b.svg)](https://arxiv.org/abs/2501.01234)
+[![arXiv](https://img.shields.io/badge/arXiv-2509.15905-b31b1b.svg)](https://arxiv.org/abs/2509.15905)
 
 Deep Feedback Models (DFMs) provide a flexible PyTorch framework for exploring neural architectures with recurrent feedback connections, enabling more biologically inspired and dynamically robust deep learning. This repository includes ready to use implementations of popular backbones such as ResNet and DeepLabV3+, extended with feedback mechanisms for classification and segmentation tasks. Our goal is to make DFMs easily accessible for research and application, while encouraging contributions to broaden the library of supported models. Learn more about the project at our [homepage](https://mira.inesc-id.pt/dfms). 
 
@@ -101,13 +101,13 @@ If you found this repository helpful, please do not forget to cite:
 @article{calhas2025dfms,
   title={Deep Feedback Models},
   author={Calhas, David and Oliveira, Arlindo L},
-  journal={arXiv preprint},
+  journal={arXiv preprint 2509.15905},
   year={2025}
 }
 @article{calhas2025dfmsegmentation,
   title={Deep Recurrence for Dynamical Segmentation Models},
   author={Calhas, David and Oliveira, Arlindo L},
-  journal={arXiv preprint},
+  journal={arXiv preprint 2507.10143},
   year={2025}
 }
 ```
