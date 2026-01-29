@@ -19,6 +19,8 @@ Below we illustrate the unrolled computational graph of a DFM with $4$ iteration
 Install this package via pip:
 
 ```bash
+conda env create -f env.yml -n <yourenv>
+conda activate <yourenv>
 pip install git+https://github.com/DCalhas/deep_feedback_models.git
 ```
 

@@ -12,3 +12,17 @@ journal: "ArXiv"
 version: 1.0.0
 date-released: 2025-07-05
 url: "https://github.com/DCalhas/deep_feedback_models"
+preferred-citation:
+  type: article
+  authors:
+  - family-names: "Calhas"
+    given-names: "David"
+    orcid: "https://orcid.org/0000-0001-6618-9086"
+  - family-names: "L Oliveira"
+    given-names: "Arlindo"
+    orcid: "https://orcid.org/0000-0001-8638-5594"
+  journal: "International Conference on Artificial Intelligence and Statistics"
+  title: "Deep Feedback Models"
+  publisher: PMLR
+  volume: 300
+  year: 2026
